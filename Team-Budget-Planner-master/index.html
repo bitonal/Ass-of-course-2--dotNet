@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Deals</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+    crossorigin="anonymous"
+  />
+    <style>
+        body,ul,li{
+           background-color:rgb(155, 159, 197) !important ;
+        }
+        th,
+        td,
+        p,
+        input {
+            font: 14px Monaco;
+        }
+
+        table,
+        th,
+        td {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+            font: 14px bold Monaco;
+        }
+
+        th {
+            font-weight: bold;
+            
+        }
+
+        label {
+            display: inline-block;
+            width: 140px;
+            text-align: right;
+        }​
+    </style>
+    <script src="create_table.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+<body onload="CreateTableFromJSON()" style="background-color:rgb(105, 113, 185);">
+    <center>
+    <h1>Manager View</h1>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Deal Id</th>
+                <th>client_name</th>
+                <th>project_name</th>
+                <th>project_manager</th>
+                <th>project_cost</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+
+        </tbody>
+    </table><br/>
+    <div align="center"></div>
+    <H3>Add New Deal</H3>
+    <ul class="list-group list-group-flush fw-bold">
+        <li  class="list-group-item"><label>Client Name</label>
+        <input type="text" id="clientNameInput" />
+    </li>
+    <li  class="list-group-item"> <label>Project Name</label>
+        <input type="text" id="projectNameInput" />
+    </li>
+    <li  class="list-group-item"> <label>Project Manager</label>
+        <input type="text" id="projectManagerInput" />
+    </li>
+    <li  class="list-group-item"><label>Project Cost</label> 
+        <input type="number" id="projectCostInput" />
+    </li>
+        </ul>
+
+  
+
+    </div>
+<br/><br/>
+    <input  class="btn btn-success" type="button" onclick="AddNewDeal()" value="Save" />
+
+    <a class="btn btn-success" href="finance.html" target="_blank">finance department</a>
+</center>
+<br>
+</body>
+
+</html>

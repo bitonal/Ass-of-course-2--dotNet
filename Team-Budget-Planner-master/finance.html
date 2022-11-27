@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Finance page</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+    crossorigin="anonymous"
+  />
+    <style>
+      th,
+      td,
+      p,
+      input {
+        font: 14px Monaco;
+      }
+
+      table,
+      th,
+      td {
+        border: solid 1px #ddd;
+        border-collapse: collapse;
+        padding: 2px 3px;
+        text-align: center;
+      }
+
+      th {
+        font-weight: bold;
+      }
+    </style>
+    <script src="finance.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+
+  <body onload="CreateTableFromJSON()" style="background-color: rgb(155, 159, 197)">
+    <center class="box mt-5">
+      <h1>Finance View</h1>
+    <table border="1" >
+      <thead>
+        <tr>
+          <th>Deal Id</th>
+          <th>client_name</th>
+          <th>project_name</th>
+          <th>project_manager</th>
+          <th>project_cost</th>
+        </tr>
+      </thead>
+      <tbody class="update" id="body">
+         <tr>
+                <td class ="dealId" >${value.dealId}</td>
+                <td class ="client_name">${value.client_name}</td>
+                <td class ="project_name">${value.project_name}</td>
+                <td class ="project_manager">${value.project_manager}</td>
+                <td ><input type="text" class ="project_cost" value= "${value.project_cost}"></td>
+              </tr> 
+      </tbody>
+    </table>
+    <br>
+    <div class="box mr-5">
+      <input 
+      type="button"
+      class="btn btn-warning " 
+      onclick="UpdateCost()"
+      value="Update Cost"
+      id="project_cost"
+    />
+    </div>
+    </center>
+    
+  
+  </body>
+</html>
